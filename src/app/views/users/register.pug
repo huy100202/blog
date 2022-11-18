@@ -1,0 +1,46 @@
+
+
+extends ../layout/main-layout.pug
+block content
+  section.bg-image(style="background-image: url(\'https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.webp\');")
+  .mask.d-flex.align-items-center.h-100.gradient-custom-3
+    .h-100.w-100
+      .row.d-flex.justify-content-center.align-items-center.h-100
+        .col-12.col-md-9.col-lg-7.col-xl-6
+          .card(style="border-radius: 15px;")
+            .card-body.p-5
+              h2.text-uppercase.text-center.mb-5 REGISTER
+              form#register_form(method="post", enctype="multipart/form-data", action="store")
+                .form-outline.mb-4.mx-2.text-center
+                  .image-upload
+                    label.col-form-label.relative(for="photo")
+                      img.img-thumbnail.avatar#label-photo(src="https://el.tvu.edu.vn/images/avatar/no-avatar.png")
+                      .camera
+                        i.fa-solid.fa-camera
+                    input.form-control.form-control-lg.d-lg-none#photo(placeholder="Avatar", name="image", type="file")
+                .form-outline.mb-4.d-flex
+                  .w-50.mx-2
+                    input#full_name.form-control.form-control-lg(name="full_name", placeholder="Full Name", type="text")
+                  .w-50.mx-2
+                    input#phone.form-control.form-control-lg(name="phone", placeholder="Phone", type="text")
+                .form-outline.mb-4.mx-2
+                  input#address.form-control.form-control-lg(placeholder="Address", name="address", type="text")
+                .form-outline.mb-4.mx-2
+                  input#email.form-control.form-control-lg(name="email", placeholder="Email Address", type="email")
+                .form-outline.mb-4.mx-2
+                  input#password.form-control.form-control-lg(name="password", placeholder="Password", type="password")
+                .form-outline.mb-4.mx-2
+                  input#repeat-password.form-control.form-control-lg(name="repeat_password", placeholder="Repeat your password", type="password")
+                .text-center
+                  .form-check.d-flex.justify-content-center.mb-3
+                    input.form-check-input.me-2#agree(type="checkbox")
+                    label.form-check-label(for="agree") I agree all statements in 
+                      a.text-body(href="#!")
+                        u Terms of service
+                .d-flex.justify-content-center
+                  button#register.btn.btn-success.btn-block.btn-lg.gradient-custom-4.text-body(name="btn_submit", type="submit") Register
+                p.text-center.text-muted.mt-5.mb-0
+                  | Have already an account? 
+                  a.fw-bold.text-body(href="#!")
+                    u Login here
+

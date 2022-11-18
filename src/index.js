@@ -1,24 +1,18 @@
 const express = require("express");
 const app = express();
 const port = 8080;
-
-const user = require("./api/models/user");
-const mongoose = require("mongoose");
+const bodyParser = require("body-parser")
+const configViewEngine = require('./config/viewEngine')
 const db =require("./config/connectDB");
+const route = require('./route');
+const path = require("path");
 db.connectDB();
-app.get("/", async (req, res) => {
-  try {
-    const newUsers = new user({
-      username: "gia huy",
-      email: "gia@gmail.com",
-      password: "haianhem",
-    });
-    const User = await newUsers.save();
-    res.status(200).json(newUsers);
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
+configViewEngine(app);
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
+app.use(express.json());
+route(app);
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
 });
