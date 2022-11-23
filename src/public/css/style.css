@@ -4,6 +4,9 @@
     border: 0;
     font-size: 100%;
 }
+p{
+    margin: 0;
+}
 ol, ul {
     list-style: none;
 }
@@ -42,4 +45,29 @@ padding: 130px 0;
 }
 .relative{
     position:relative;
+}
+hr:not([size]){
+    height: 1px;
+    width: 40%;
+}
+.img-avatar{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    padding:0 !important;
+}
+.name{
+    white-space: nowrap;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+.dropdown-menu[data-bs-popper]{
+    right:0;
+    left:unset;
+    top:50%;
+
+}
+.card{
+    border-radius: 15px;
+    margin: 20px 0;
 }
